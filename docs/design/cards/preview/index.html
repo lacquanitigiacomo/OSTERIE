@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Osterie Extreme Survival — Carte Imprevisto V1</title>
+<style>
+:root{--ink:#21130d;--paper:#f2d58e;--red:#d32d22;--yellow:#f7bf19;--green:#183f2b;--cream:#fff1bd;--black:#15110d}
+*{box-sizing:border-box}body{margin:0;background:#17120e;color:#f8e6b7;font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif}.toolbar{position:sticky;top:0;z-index:9;display:flex;align-items:center;gap:12px;padding:14px 20px;background:#17120eef;border-bottom:3px solid #f7bf19;backdrop-filter:blur(12px)}.toolbar h1{font-size:20px;margin:0 auto 0 0;letter-spacing:.04em}.toolbar select,.toolbar button{border:2px solid var(--yellow);background:#281b13;color:#fff3c4;padding:9px 12px;font:700 14px Arial;cursor:pointer}.summary{font:700 14px Arial;color:#f7bf19}.deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:34px;padding:34px;align-items:start}.event-card{position:relative;width:100%;max-width:390px;aspect-ratio:5/8;margin:auto;overflow:hidden;padding:16px;display:grid;grid-template-rows:auto auto 28% auto auto 1fr;gap:8px;color:var(--ink);background:radial-gradient(circle at 18% 12%,#fff2be 0 2%,transparent 3%),repeating-linear-gradient(3deg,#efd18a 0 5px,#e9c67b 6px 9px);border:6px solid var(--black);border-radius:18px;box-shadow:0 0 0 3px var(--red),8px 10px 0 #0008;transform:rotate(var(--tilt,0deg))}.event-card:nth-child(3n+1){--tilt:-.25deg}.event-card:nth-child(3n+2){--tilt:.2deg}.event-card::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent 70%,#6e17161c),radial-gradient(circle at 88% 4%,#7b151522 0 8%,transparent 9%)}header{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--ink);font-size:12px;letter-spacing:.08em}header span{background:var(--green);color:#fff0bd;padding:5px 8px;transform:skew(-5deg)}header b{font-size:17px}h2{margin:0;text-align:center;font-size:clamp(25px,2.25vw,37px);line-height:.9;letter-spacing:.015em;text-wrap:balance;text-shadow:2px 2px 0 #fff0bd}.art{position:relative;overflow:hidden;display:grid;place-items:center;background:var(--red);border:4px solid var(--ink);clip-path:polygon(2% 5%,98% 0,96% 95%,4% 100%)}.art::before{content:'';position:absolute;width:170%;height:170%;background:repeating-conic-gradient(var(--yellow) 0 8deg,var(--red) 8deg 16deg);animation:pulse 8s linear infinite}.art span{position:relative;z-index:1;padding:8px 14px;background:var(--cream);border:4px solid var(--ink);font-size:clamp(25px,2.5vw,42px);transform:rotate(-5deg);text-shadow:2px 2px 0 var(--yellow)}.art strong{position:absolute;right:12px;bottom:-9px;z-index:1;color:#fff;font-size:58px;-webkit-text-stroke:3px #1d110c}.description{margin:0;padding:8px 9px;background:#fff1c5;border:2px solid var(--ink);font:800 clamp(12px,1.05vw,15px)/1.2 Arial,sans-serif;text-align:center}.consequences{list-style:none;margin:0;padding:0;background:#f7c629;border:3px solid var(--ink);font:800 clamp(11px,.9vw,14px)/1.15 Arial,sans-serif}.consequences li{padding:6px 8px;border-bottom:2px solid var(--ink)}.consequences li:last-child{border:0}.escape{min-height:0;display:flex;flex-direction:column;border:3px solid var(--ink);background:#f9e6a9}.escape h3{margin:-1px -1px 3px;padding:4px;background:var(--ink);color:var(--yellow);font-size:clamp(17px,1.5vw,23px);text-align:center;letter-spacing:.05em}.escape>div{min-height:0;display:grid;grid-template-columns:repeat(3,1fr);flex:1}.escape-option{min-width:0;padding:5px;border-right:2px solid var(--ink);display:flex;flex-direction:column;gap:3px;text-align:center}.escape-option:last-child{border:0}.escape-option b{color:var(--red);font-size:clamp(11px,.95vw,14px)}.escape-option span{font:700 clamp(9px,.72vw,11px)/1.08 Arial,sans-serif;overflow-wrap:anywhere}.fit-badge{position:absolute;right:8px;top:44px;padding:3px 6px;background:#196b35;color:white;border:2px solid #111;font:900 11px Arial}.event-card.is-overflowing{box-shadow:0 0 0 5px #ff304f,8px 10px 0 #0008}.event-card.is-overflowing .fit-badge{background:#d4112d}.event-card.is-overflowing .fit-badge::after{content:' — TESTO LUNGO'}body.compact .deck{grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}body.compact .event-card{max-width:320px}body.show-overflow .event-card:not(.is-overflowing){display:none}body[data-view="tv"] .event-card{grid-template-rows:auto auto 42% auto 1fr}body[data-view="tv"] .escape{display:none}body[data-view="controller"] .event-card{grid-template-rows:auto auto auto 1fr}body[data-view="controller"] .art,body[data-view="controller"] .consequences{display:none}body[data-view="controller"] .description{font-size:16px}body[data-view="controller"] .escape-option{justify-content:center}body[data-view="controller"] .escape-option span{font-size:14px;line-height:1.25}@keyframes pulse{50%{transform:rotate(4deg) scale(1.04)}}@media(prefers-reduced-motion:reduce){.art::before{animation:none}}@media(max-width:600px){.toolbar{flex-wrap:wrap}.toolbar h1{width:100%}.deck{padding:18px;grid-template-columns:1fr}.event-card{max-width:370px}}
+@media print{.toolbar{display:none}.deck{grid-template-columns:repeat(3,1fr);gap:8mm;padding:0}.event-card{break-inside:avoid;box-shadow:none;max-width:none}}
+</style>
+</head>
+<body data-view="tv">
+<nav class="toolbar"><h1>CARTE IMPREVISTO V1 · STILE B</h1><span class="summary" id="summary">Analisi…</span><select id="family"><option value="">Tutte le famiglie</option><option>Disastri personali</option><option>Incontri sociali</option><option>Caos urbano</option><option>Eventi da osteria</option><option>Colpi di fortuna e caos positivo</option></select><button id="surface">Vista controller</button><button id="size">Vista compatta</button><button id="overflow">Solo testi lunghi</button></nav>
+<main class="deck"><article class="event-card" data-family="Disastri personali" data-card="01">
+    <header><span>DISASTRO PERSONALE</span><b>#01</b></header>
+    <h2>IL TELEFONO AL 2%</h2>
+    <div class="art" aria-label="Spazio illustrazione Il telefono al 2%"><span>KA-BOOM!</span><strong>01</strong></div>
+    <p class="description">Il tuo telefono emette il suo ultimo rantolo proprio quando tocca a te. Lo schermo si oscura lasciandoti come testamento un dignitosissimo 2%.</p>
+    <ul class="consequences"><li><strong>Modalità aereo:</strong> salti il prossimo bonus, <code>E +1</code>.</li><li><strong>Power bank del tirchio:</strong> paga <code>€2</code> e gioca normalmente.</li><li><strong>Fai finta di niente:</strong> al prossimo turno i comandi arrivano con 3 secondi di ritardo.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra al gruppo gli ultimi tre profili cercati sui social</span></div><div class="escape-option"><b>FAI</b><span>imita la vibrazione di un telefono morente</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="02">
+    <header><span>DISASTRO PERSONALE</span><b>#02</b></header>
+    <h2>LA SCARPA TRADITRICE</h2>
+    <div class="art" aria-label="Spazio illustrazione La scarpa traditrice"><span>KA-BOOM!</span><strong>02</strong></div>
+    <p class="description">Hai pestato qualcosa di caldo, molle e filosoficamente discutibile. Non vuoi sapere cosa fosse, ma adesso cammini come un pinguino incazzato.</p>
+    <ul class="consequences"><li><strong>Pulizia dignitosa:</strong> <code>€2</code>, <code>D +1</code>.</li><li><strong>Continua così:</strong> <code>D -1</code>, avanza di 1 casella.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>lascia che il gruppo ispezioni e giudichi la suola delle tue scarpe</span></div><div class="escape-option"><b>FAI</b><span>attraversa la stanza camminando da pinguino</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="03">
+    <header><span>DISASTRO PERSONALE</span><b>#03</b></header>
+    <h2>MESSAGGIO ALL'EX</h2>
+    <div class="art" aria-label="Spazio illustrazione Messaggio all'ex"><span>KA-BOOM!</span><strong>03</strong></div>
+    <p class="description">Hai scritto “mi manchi” alla persona sbagliata, usando pure il cuore rosso come un coglione. Tre puntini stanno lampeggiando e sembrano il conto alla rovescia della tua dignità.</p>
+    <ul class="consequences"><li><strong>Cancella e nega tutto:</strong> <code>S +1</code>.</li><li><strong>Raddoppia la figura di merda:</strong> <code>D -2</code>, <code>E +1</code>.</li><li><strong>Passa il telefono:</strong> un avversario sceglie quale delle due conseguenze applicarti.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra l'ultima conversazione in cui hai usato un cuore, nascondendo nomi e foto</span></div><div class="escape-option"><b>FAI</b><span>recita una dichiarazione d'amore a una sedia</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="04">
+    <header><span>DISASTRO PERSONALE</span><b>#04</b></header>
+    <h2>PORTAFOGLIO FANTASMA</h2>
+    <div class="art" aria-label="Spazio illustrazione Portafoglio fantasma"><span>KA-BOOM!</span><strong>04</strong></div>
+    <p class="description">Per trenta secondi credi di aver perso portafoglio, documenti e futuro. Era nella tasca davanti, quella che hai controllato quattro volte bestemmiando.</p>
+    <ul class="consequences"><li><strong>Panico totale:</strong> <code>E -1</code>, <code>U +1</code>.</li><li><strong>Trasforma la paura in questua:</strong> prendi <code>€1</code> da ogni giocatore con più budget di te, massimo <code>€3</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra l'oggetto più inutile che porti addosso e giustificane l'esistenza</span></div><div class="escape-option"><b>FAI</b><span>svuota teatralmente le tasche</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="05">
+    <header><span>DISASTRO PERSONALE</span><b>#05</b></header>
+    <h2>IL SINGHIOZZO DEL DEMONIO</h2>
+    <div class="art" aria-label="Spazio illustrazione Il singhiozzo del demonio"><span>KA-BOOM!</span><strong>05</strong></div>
+    <p class="description">Ogni frase viene spezzata da un singhiozzo che sembra una foca posseduta. Un bambino al tavolo accanto ha iniziato a imitarti e lo fa pure meglio.</p>
+    <ul class="consequences"><li><strong>Trattieni il fiato:</strong> mini-prova sul telefono; successo <code>D +1</code>, fallimento <code>E -1</code>.</li><li><strong>Accettalo:</strong> <code>D -1</code>, ma sei immune alla prossima perdita di dignità.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>il gruppo sceglie una tua figuraccia nota e tu devi confermare o smentire senza spiegazioni</span></div><div class="escape-option"><b>FAI</b><span>fai tre versi da foca posseduta</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="06">
+    <header><span>DISASTRO PERSONALE</span><b>#06</b></header>
+    <h2>FOTO COMPROMETTENTE</h2>
+    <div class="art" aria-label="Spazio illustrazione Foto compromettente"><span>KA-BOOM!</span><strong>06</strong></div>
+    <p class="description">Qualcuno ha immortalato la tua faccia peggiore della serata con modalità ritratto e luce perfetta. La foto è talmente oscena che potrebbe diventare il manifesto ufficiale del gioco.</p>
+    <ul class="consequences"><li><strong>Corrompi il fotografo:</strong> <code>€3</code>.</li><li><strong>Pubblicala tu:</strong> <code>D -1</code>, pesca una carta Fortuna.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra la foto più compromettente che trovi nella galleria del telefono</span></div><div class="escape-option"><b>FAI</b><span>mettiti in posa da foto segnaletica</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="07">
+    <header><span>DISASTRO PERSONALE</span><b>#07</b></header>
+    <h2>CRISI FILOSOFICA SUL MARCIAPIEDE</h2>
+    <div class="art" aria-label="Spazio illustrazione Crisi filosofica sul marciapiede"><span>KA-BOOM!</span><strong>07</strong></div>
+    <p class="description">Ti fermi sul marciapiede a spiegare perché i piccioni sono una metafora del capitalismo. Nessuno te l'ha chiesto, ma ormai stai disegnando grafici sull'asfalto con una patatina.</p>
+    <ul class="consequences"><li><strong>Concludi il TED Talk:</strong> perdi il prossimo movimento, <code>D +2</code>.</li><li><strong>Torna nel mondo reale:</strong> <code>E -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>sostieni per trenta secondi l'opinione più impopolare che hai davvero</span></div><div class="escape-option"><b>FAI</b><span>improvvisa dieci secondi di TED Talk sui piccioni</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="08">
+    <header><span>DISASTRO PERSONALE</span><b>#08</b></header>
+    <h2>LA CINTURA HA MOLLATO</h2>
+    <div class="art" aria-label="Spazio illustrazione La cintura ha mollato"><span>KA-BOOM!</span><strong>08</strong></div>
+    <p class="description">Un bottone vola via con la velocità di un proiettile e colpisce un innocente. I pantaloni dichiarano ufficialmente conclusa la collaborazione con il tuo culo.</p>
+    <ul class="consequences"><li><strong>Riparazione creativa:</strong> paga <code>€1</code>, <code>D +1</code>.</li><li><strong>Stile libero:</strong> <code>D -2</code>, ma avanza di 2 caselle perché nessuno vuole fermarti.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>fai scegliere al gruppo il capo peggiore che indossi e difendilo come alta moda</span></div><div class="escape-option"><b>FAI</b><span>sfila come se i pantaloni stessero cadendo</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="09">
+    <header><span>DISASTRO PERSONALE</span><b>#09</b></header>
+    <h2>NOME DIMENTICATO</h2>
+    <div class="art" aria-label="Spazio illustrazione Nome dimenticato"><span>KA-BOOM!</span><strong>09</strong></div>
+    <p class="description">Stai parlando da dieci minuti con una persona di cui non ricordi minimamente il nome. Hai già usato “campione”, “vecchio” e “grandissimo”; le munizioni stanno finendo.</p>
+    <ul class="consequences"><li><strong>“Capo!”:</strong> <code>S +1</code>.</li><li><strong>Confessa:</strong> <code>D +1</code> se hai meno di 5 dignità, altrimenti <code>D -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>nomina tutti i presenti senza sbagliare o accetta il soprannome scelto dal gruppo fino a fine partita</span></div><div class="escape-option"><b>FAI</b><span>assegna un soprannome a ogni giocatore</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Disastri personali" data-card="10">
+    <header><span>DISASTRO PERSONALE</span><b>#10</b></header>
+    <h2>VESCICA IN RIVOLTA</h2>
+    <div class="art" aria-label="Spazio illustrazione Vescica in rivolta"><span>KA-BOOM!</span><strong>10</strong></div>
+    <p class="description">La tua vescica presenta una richiesta urgente, formale e non negoziabile. Ogni sampietrino ora sembra personalmente interessato a farti pisciare addosso.</p>
+    <ul class="consequences"><li><strong>Deviazione bagno:</strong> arretra di 1 casella, <code>ST -1</code>.</li><li><strong>Resistenza eroica:</strong> <code>E -2</code>, mantieni la posizione.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>rispondi senza mentire alla domanda del gruppo più imbarazzante sul tema bagno</span></div><div class="escape-option"><b>FAI</b><span>fai per dieci secondi il balletto della pipì</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="11">
+    <header><span>INCONTRO SOCIALE</span><b>#11</b></header>
+    <h2>L'AMICO POVERO</h2>
+    <div class="art" aria-label="Spazio illustrazione L'amico povero"><span>OH NO!</span><strong>11</strong></div>
+    <p class="description">L'amico povero compare dal nulla con il tempismo di un ufficiale giudiziario. Ti abbraccia e pronuncia la frase più temuta della serata: “Offri tu, vero?”.</p>
+    <ul class="consequences"><li><strong>Offri il giro:</strong> <code>€ -5</code>, <code>D +1</code>.</li><li><strong>Fai il tirchio:</strong> <code>D -2</code>, conservi il budget.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>apri il portafoglio e mostra quanto contante hai davvero</span></div><div class="escape-option"><b>FAI</b><span>implora il gruppo per un euro immaginario</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="12">
+    <header><span>INCONTRO SOCIALE</span><b>#12</b></header>
+    <h2>IL COINQUILINO CREDITORE</h2>
+    <div class="art" aria-label="Spazio illustrazione Il coinquilino creditore"><span>OH NO!</span><strong>12</strong></div>
+    <p class="description">Il coinquilino si ricorda improvvisamente dei soldi della carta igienica di marzo. Ha portato ricevute, testimoni e una presentazione PowerPoint intitolata “Dove cazzo sono i miei quattro euro?”.</p>
+    <ul class="consequences"><li><strong>Paga il debito:</strong> <code>€ -4</code>, <code>S -1</code>.</li><li><strong>Inventati un bonifico:</strong> <code>S +2</code>; se possiedi meno di <code>€5</code>, anche <code>D -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>lascia che il gruppo scelga quale tua abitudine domestica dovrebbe farti sfrattare</span></div><div class="escape-option"><b>FAI</b><span>vendi al gruppo un rotolo immaginario</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="13">
+    <header><span>INCONTRO SOCIALE</span><b>#13</b></header>
+    <h2>ERASMUS SCATENATO</h2>
+    <div class="art" aria-label="Spazio illustrazione Erasmus scatenato"><span>OH NO!</span><strong>13</strong></div>
+    <p class="description">Un Erasmus scatenato ti sfida a pronunciare uno scioglilingua in una lingua che nessuno dei due conosce. Dopo tre parole state probabilmente insultando la famiglia reale di una nazione inesistente.</p>
+    <ul class="consequences"><li><strong>Accetta la prova:</strong> successo <code>D +2</code>, fallimento <code>D -1</code>.</li><li><strong>Declina con eleganza:</strong> <code>E +1</code>, <code>D -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>leggi ad alta voce l'ultimo messaggio scritto in una lingua straniera</span></div><div class="escape-option"><b>FAI</b><span>inventa e pronuncia uno scioglilingua</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="14">
+    <header><span>INCONTRO SOCIALE</span><b>#14</b></header>
+    <h2>IL TUTTOLOGO</h2>
+    <div class="art" aria-label="Spazio illustrazione Il tuttologo"><span>OH NO!</span><strong>14</strong></div>
+    <p class="description">Un tizio ti spiega con sicurezza assoluta una materia che studi da cinque anni. Ogni sua frase è sbagliata, ma la pronuncia con il tono di chi sta salvando l'umanità.</p>
+    <ul class="consequences"><li><strong>Correggilo:</strong> <code>S +1</code>, <code>D +1</code>.</li><li><strong>Annuisci per pietà:</strong> <code>E -1</code>, pesca una carta Fortuna.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>fatti interrogare dal gruppo sull'argomento di cui ti vanti di sapere tutto</span></div><div class="escape-option"><b>FAI</b><span>spiega per quindici secondi una materia inventata</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="15">
+    <header><span>INCONTRO SOCIALE</span><b>#15</b></header>
+    <h2>LA COMITIVA PARASSITA</h2>
+    <div class="art" aria-label="Spazio illustrazione La comitiva parassita"><span>OH NO!</span><strong>15</strong></div>
+    <p class="description">Cinque sconosciuti decidono contemporaneamente che siete diventati migliori amici. Hanno già inventato un soprannome per te e uno di loro vuole dormire sul tuo divano.</p>
+    <ul class="consequences"><li><strong>Adottali:</strong> <code>€ -3</code>, avanza di 2 caselle.</li><li><strong>Seminali:</strong> mini-prova riflessi; fallimento <code>E -2</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>indica chi al tavolo non inviteresti mai a dormire da te e digli il motivo in una frase</span></div><div class="escape-option"><b>FAI</b><span>presenta il giocatore alla tua destra come tuo migliore amico</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="16">
+    <header><span>INCONTRO SOCIALE</span><b>#16</b></header>
+    <h2>IL COMPAGNO DI CORSO INVISIBILE</h2>
+    <div class="art" aria-label="Spazio illustrazione Il compagno di corso invisibile"><span>OH NO!</span><strong>16</strong></div>
+    <p class="description">Non lo vedevi da mesi e pensavi fosse solo una leggenda universitaria. Ricompare per chiederti gli appunti di tutto il semestre, possibilmente ordinati e con gli evidenziatori belli.</p>
+    <ul class="consequences"><li><strong>Condividi:</strong> <code>D +2</code>, <code>E -1</code>.</li><li><strong>“Ho cambiato facoltà”:</strong> <code>S +1</code>, <code>D -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra al gruppo il voto universitario di cui vai meno fiero</span></div><div class="escape-option"><b>FAI</b><span>detta tre righe di appunti completamente inutili</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="17">
+    <header><span>INCONTRO SOCIALE</span><b>#17</b></header>
+    <h2>KARAOKE NON RICHIESTO</h2>
+    <div class="art" aria-label="Spazio illustrazione Karaoke non richiesto"><span>OH NO!</span><strong>17</strong></div>
+    <p class="description">Ti porgono un microfono senza spiegazioni né possibilità di fuga. La base è già partita, fa schifo e purtroppo tutti conoscono il ritornello tranne te.</p>
+    <ul class="consequences"><li><strong>Canta o recita:</strong> voto degli altri; vittoria <code>D +2</code>, sconfitta <code>D -1</code>.</li><li><strong>Passa il microfono:</strong> scegli un avversario; entrambi <code>S +1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>apri la cronologia musicale e fai scegliere al gruppo il brano più vergognoso</span></div><div class="escape-option"><b>FAI</b><span>canta un ritornello usando solo “la”</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="18">
+    <header><span>INCONTRO SOCIALE</span><b>#18</b></header>
+    <h2>IL SOSIA INQUIETANTE</h2>
+    <div class="art" aria-label="Spazio illustrazione Il sosia inquietante"><span>OH NO!</span><strong>18</strong></div>
+    <p class="description">Incontri qualcuno identico a te, ma vestito meglio e apparentemente sobrio. Ti guarda con la delusione di una versione alternativa che ha preso tutte le decisioni giuste.</p>
+    <ul class="consequences"><li><strong>Foto insieme:</strong> <code>D +1</code>.</li><li><strong>Sfida di stile:</strong> spendi <code>€2</code>; ruba 1 dignità al giocatore più dignitoso.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>guarda un giocatore negli occhi e digli cosa gli invidi davvero</span></div><div class="escape-option"><b>FAI</b><span>imita la tua versione elegante e sobria</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="19">
+    <header><span>INCONTRO SOCIALE</span><b>#19</b></header>
+    <h2>IL PROFESSORE FUORI SEDE</h2>
+    <div class="art" aria-label="Spazio illustrazione Il professore fuori sede"><span>OH NO!</span><strong>19</strong></div>
+    <p class="description">Vedi un docente fuori dal suo habitat naturale e per un istante smette di sembrare immortale. Anche lui ti vede: entrambi valutate seriamente di fingervi persone diverse.</p>
+    <ul class="consequences"><li><strong>Saluto civile:</strong> <code>S -1</code>, <code>D +1</code>.</li><li><strong>Nasconditi malissimo:</strong> arretra di 1 casella, <code>D -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra l'ultima email inviata a un docente, oscurando i dati privati</span></div><div class="escape-option"><b>FAI</b><span>simula un esame orale su una materia assurda</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Incontri sociali" data-card="20">
+    <header><span>INCONTRO SOCIALE</span><b>#20</b></header>
+    <h2>IL RIMORCHIATORE SERIALE</h2>
+    <div class="art" aria-label="Spazio illustrazione Il rimorchiatore seriale"><span>OH NO!</span><strong>20</strong></div>
+    <p class="description">Un fenomeno sta usando la stessa frase di rimorchio con tutte le persone nel locale. Ha già cambiato solo il nome tre volte, sbagliandolo comunque due.</p>
+    <ul class="consequences"><li><strong>Smascheralo:</strong> <code>D +2</code>, <code>S +1</code>.</li><li><strong>Rubagli la battuta:</strong> al prossimo evento sociale ottieni un successo automatico, ma <code>D -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>leggi l'ultimo messaggio di rimorchio inviato o ricevuto, senza mostrare il nome</span></div><div class="escape-option"><b>FAI</b><span>provane una con un bicchiere o una sedia</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="21">
+    <header><span>CAOS URBANO</span><b>#21</b></header>
+    <h2>BICICLETTA SENZA PADRONE</h2>
+    <div class="art" aria-label="Spazio illustrazione Bicicletta senza padrone"><span>SBAM!</span><strong>21</strong></div>
+    <p class="description">Una bicicletta senza padrone attraversa la scena come se avesse una missione propria. Non c'è nessuno in sella, ma sembra comunque più lucida e responsabile di voi.</p>
+    <ul class="consequences"><li><strong>Schivata:</strong> mini-prova; successo avanza 1, fallimento <code>E -1</code>.</li><li><strong>Lasciala passare:</strong> nessun effetto, ma perdi ogni bonus movimento del turno.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra al gruppo il danno più evidente sulla tua bici o sul tuo mezzo</span></div><div class="escape-option"><b>FAI</b><span>mima una volata al rallentatore</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="22">
+    <header><span>CAOS URBANO</span><b>#22</b></header>
+    <h2>PIOGGIA BASTARDA</h2>
+    <div class="art" aria-label="Spazio illustrazione Pioggia bastarda"><span>SBAM!</span><strong>22</strong></div>
+    <p class="description">Inizia a piovere soltanto sopra di voi, con precisione quasi personale. Il resto di Padova è asciutto e vi osserva mentre diventate una zuppa di studenti falliti.</p>
+    <ul class="consequences"><li><strong>Taxi:</strong> <code>€ -4</code>, avanza di 3 caselle.</li><li><strong>Corsa disperata:</strong> <code>E -2</code>, avanza di 2.</li><li><strong>Aspetta:</strong> salta il movimento, <code>U -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>lascia che il gruppo valuti da uno a dieci quanto sei vestito male per il meteo</span></div><div class="escape-option"><b>FAI</b><span>interpreta un ombrello umano</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="23">
+    <header><span>CAOS URBANO</span><b>#23</b></header>
+    <h2>TRAM FANTASMA</h2>
+    <div class="art" aria-label="Spazio illustrazione Tram fantasma"><span>SBAM!</span><strong>23</strong></div>
+    <p class="description">Il display del tram promette “2 minuti” da almeno venti minuti. Il numero non cambia, ma voi sì: state invecchiando, perdendo speranza e valutando un mutuo alla fermata.</p>
+    <ul class="consequences"><li><strong>Aspetta ancora:</strong> <code>E +1</code>, arretra di 1.</li><li><strong>Vai a piedi:</strong> <code>E -1</code>, avanza di 1.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra l'ultimo messaggio in cui hai scritto “sto arrivando” mentre eri ancora a casa</span></div><div class="escape-option"><b>FAI</b><span>annuncia una fermata del tram con voce sensuale</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="24">
+    <header><span>CAOS URBANO</span><b>#24</b></header>
+    <h2>CANTIERE INFINITO</h2>
+    <div class="art" aria-label="Spazio illustrazione Cantiere infinito"><span>SBAM!</span><strong>24</strong></div>
+    <p class="description">La strada è chiusa da transenne che sembrano risalire alla Serenissima. Dietro non c'è alcun cantiere, soltanto una buca, due coni e il mistero amministrativo più longevo del Veneto.</p>
+    <ul class="consequences"><li><strong>Deviazione:</strong> arretra di 2 caselle.</li><li><strong>Passaggio sospetto:</strong> avanza di 1, <code>S +2</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>apri la cronologia delle posizioni e mostra l'ultima deviazione assurda, se disponibile</span></div><div class="escape-option"><b>FAI</b><span>costruisci una transenna umana per dieci secondi</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="25">
+    <header><span>CAOS URBANO</span><b>#25</b></header>
+    <h2>PICCIONE KAMIKAZE</h2>
+    <div class="art" aria-label="Spazio illustrazione Piccione kamikaze"><span>SBAM!</span><strong>25</strong></div>
+    <p class="description">Un piccione ti prende di mira con la precisione militare di un drone. Ti guarda negli occhi, calcola il vento e sgancia il suo giudizio definitivo sulla tua serata.</p>
+    <ul class="consequences"><li><strong>Usa un amico come scudo:</strong> scegli un giocatore: lui <code>D -1</code>, tu <code>S +1</code>.</li><li><strong>Accetta il destino:</strong> <code>D -2</code>, pesca una carta Fortuna.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra la foto più ridicola che hai con un animale</span></div><div class="escape-option"><b>FAI</b><span>interpreta il piccione durante l'attacco</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="26">
+    <header><span>CAOS URBANO</span><b>#26</b></header>
+    <h2>SIRENE NELLA NOTTE</h2>
+    <div class="art" aria-label="Spazio illustrazione Sirene nella notte"><span>SBAM!</span><strong>26</strong></div>
+    <p class="description">Le sirene squarciano la notte e improvvisamente tutti camminano come narcotrafficanti in una fiction scadente. Anche chi stava solo respirando sembra avere sette mandati di cattura.</p>
+    <ul class="consequences"><li><strong>Comportati naturale:</strong> mini-prova memoria; fallimento <code>S +2</code>.</li><li><strong>Cambia strada:</strong> arretra di 1, <code>S -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>consegna il telefono a un giocatore che può leggere ad alta voce una tua ricerca recente scelta da te tra le ultime cinque</span></div><div class="escape-option"><b>FAI</b><span>cammina da innocente palesemente colpevole</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="27">
+    <header><span>CAOS URBANO</span><b>#27</b></header>
+    <h2>GOOGLE MAPS UBRIACO</h2>
+    <div class="art" aria-label="Spazio illustrazione Google Maps ubriaco"><span>SBAM!</span><strong>27</strong></div>
+    <p class="description">Il navigatore vi conduce davanti a un portone chiuso e annuncia trionfante: “Sei arrivato”. Per lui l'osteria è dentro un appartamento al terzo piano e voi siete stronzi a dubitarne.</p>
+    <ul class="consequences"><li><strong>Fidati ancora:</strong> arretra di 2, <code>E -1</code>.</li><li><strong>Chiedi indicazioni:</strong> scegli un giocatore che decide se farti avanzare 1 o farti perdere <code>€2</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>apri la mappa e mostra il luogo più inspiegabile salvato tra i preferiti</span></div><div class="escape-option"><b>FAI</b><span>dai indicazioni assurde al giocatore di fronte</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="28">
+    <header><span>CAOS URBANO</span><b>#28</b></header>
+    <h2>LA MANIFESTAZIONE INCOMPRENSIBILE</h2>
+    <div class="art" aria-label="Spazio illustrazione La manifestazione incomprensibile"><span>SBAM!</span><strong>28</strong></div>
+    <p class="description">Ti ritrovi dentro un corteo senza sapere per cosa stai protestando. Hai già urlato tre slogan contraddittori e qualcuno ti ha nominato responsabile dei volantini.</p>
+    <ul class="consequences"><li><strong>Alza un cartello:</strong> <code>D +1</code>, <code>S +1</code>, avanza di 1.</li><li><strong>Fuga laterale:</strong> <code>E -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>scegli una causa assurda e convinci almeno metà del gruppo ad alzare la mano in suo favore</span></div><div class="escape-option"><b>FAI</b><span>inventa e urla uno slogan ridicolo</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="29">
+    <header><span>CAOS URBANO</span><b>#29</b></header>
+    <h2>ARTISTA DI STRADA VENDICATIVO</h2>
+    <div class="art" aria-label="Spazio illustrazione Artista di strada vendicativo"><span>SBAM!</span><strong>29</strong></div>
+    <p class="description">Non hai applaudito e ora il mimo ti segue in silenzio con rancore professionale. Sta imitando ogni tuo movimento, compresi quelli che speravi nessuno avesse notato.</p>
+    <ul class="consequences"><li><strong>Lascia una moneta:</strong> <code>€ -1</code>, <code>D +1</code>.</li><li><strong>Sfida mimica:</strong> prova sul telefono; successo <code>D +2</code>, fallimento arretra di 1.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>lascia che il gruppo scelga un tuo tic e dimostri davanti a tutti che lo fai davvero</span></div><div class="escape-option"><b>FAI</b><span>resta mimo per venti secondi</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Caos urbano" data-card="30">
+    <header><span>CAOS URBANO</span><b>#30</b></header>
+    <h2>LUCCHETTO MALEDETTO</h2>
+    <div class="art" aria-label="Spazio illustrazione Lucchetto maledetto"><span>SBAM!</span><strong>30</strong></div>
+    <p class="description">Qualcuno ha legato la propria bici alla tua con due catene e una convinzione incrollabile. È un capolavoro di coglionaggine urbana che neanche Leonardo avrebbe saputo progettare.</p>
+    <ul class="consequences"><li><strong>Aspetta il proprietario:</strong> salta un turno, <code>S -1</code>.</li><li><strong>Chiama aiuto:</strong> <code>€ -3</code>, continua subito.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra una foto del caos nella tua camera, scrivania o borsa</span></div><div class="escape-option"><b>FAI</b><span>mima lo scasso del lucchetto senza toccare nulla</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="31">
+    <header><span>CAOS DA OSTERIA</span><b>#31</b></header>
+    <h2>CONTO CREATIVO</h2>
+    <div class="art" aria-label="Spazio illustrazione Conto creativo"><span>CIN CIN!</span><strong>31</strong></div>
+    <p class="description">Sul tavolo compare una consumazione che nessuno ricorda di aver ordinato. Tutti la riconoscono, nessuno confessa e il bicchiere sembra guardarvi con aria da testimone protetto.</p>
+    <ul class="consequences"><li><strong>Dividete:</strong> tutti perdono <code>€1</code>.</li><li><strong>Indagine collettiva:</strong> votate un colpevole; perde <code>€3</code>, ma se il voto è unanime tutti perdono <code>D1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra l'ultimo acquisto inutile nell'app bancaria oscurando saldo e dati sensibili</span></div><div class="escape-option"><b>FAI</b><span>interroga il bicchiere come un commissario</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="32">
+    <header><span>CAOS DA OSTERIA</span><b>#32</b></header>
+    <h2>BICCHIERE BALLERINO</h2>
+    <div class="art" aria-label="Spazio illustrazione Bicchiere ballerino"><span>CIN CIN!</span><strong>32</strong></div>
+    <p class="description">Un gomito anonimo mette in moto una catastrofe liquida al rallentatore. Cinque persone urlano “OCCHIO!” quando il bicchiere è già caduto da almeno un quarto d'ora.</p>
+    <ul class="consequences"><li><strong>Salva il tavolo:</strong> prova riflessi; successo <code>D +1</code>, fallimento <code>€ -2</code>.</li><li><strong>Salva solo te stesso:</strong> <code>S +1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>indica un oggetto che hai rotto e manda al gruppo una foto come prova, se esiste ancora</span></div><div class="escape-option"><b>FAI</b><span>ricrea la caduta al rallentatore</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="33">
+    <header><span>CAOS DA OSTERIA</span><b>#33</b></header>
+    <h2>ORDINAZIONE SBAGLIATA</h2>
+    <div class="art" aria-label="Spazio illustrazione Ordinazione sbagliata"><span>CIN CIN!</span><strong>33</strong></div>
+    <p class="description">Ti arriva qualcosa che non avevi chiesto, ma ha un aspetto pericolosamente interessante. Il cameriere è già sparito e il tavolo ha deciso democraticamente che ormai è un problema tuo.</p>
+    <ul class="consequences"><li><strong>Tieni l'ordine:</strong> <code>€ -2</code>, <code>U +1</code>, <code>ST +1</code>.</li><li><strong>Rimandalo:</strong> <code>D -1</code>, recuperi <code>€1</code>.</li><li><strong>Versione analcolica:</strong> <code>€ -1</code>, <code>U -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra una foto o una ricerca del cibo più osceno che mangeresti volentieri</span></div><div class="escape-option"><b>FAI</b><span>presenta il piatto immaginario da chef stellato</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="34">
+    <header><span>CAOS DA OSTERIA</span><b>#34</b></header>
+    <h2>IL TAVOLO APPICCICOSO</h2>
+    <div class="art" aria-label="Spazio illustrazione Il tavolo appiccicoso"><span>CIN CIN!</span><strong>34</strong></div>
+    <p class="description">Il telefono resta incollato al tavolo come un fossile del Pleistocene. Quando provi a sollevarlo, il tavolo fa un rumore che sembra dire: “Questo adesso è mio”.</p>
+    <ul class="consequences"><li><strong>Strappo deciso:</strong> mini-prova; fallimento salti l'azione telefonica successiva.</li><li><strong>Pulizia:</strong> <code>€ -1</code>, <code>D +1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra al gruppo lo stato reale della cover e lascia che voti quanto fa schifo</span></div><div class="escape-option"><b>FAI</b><span>prova a staccare una mano immaginaria dal tavolo</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="35">
+    <header><span>CAOS DA OSTERIA</span><b>#35</b></header>
+    <h2>ULTIMO CICCHETTO CONTESO</h2>
+    <div class="art" aria-label="Spazio illustrazione Ultimo cicchetto conteso"><span>CIN CIN!</span><strong>35</strong></div>
+    <p class="description">Resta un solo cicchetto e quattro persone fingono educatamente di non volerlo. Intanto lo fissano con la concentrazione di cecchini e avvicinano lentamente le mani.</p>
+    <ul class="consequences"><li><strong>Prendilo:</strong> <code>ST +2</code>, <code>D -1</code>.</li><li><strong>Offrilo:</strong> scegli un giocatore: lui <code>ST +1</code>, tu <code>D +2</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>scegli chi al tavolo merita meno l'ultimo boccone e diglielo guardandolo negli occhi</span></div><div class="escape-option"><b>FAI</b><span>corteggia l'ultimo boccone con una poesia</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="36">
+    <header><span>CAOS DA OSTERIA</span><b>#36</b></header>
+    <h2>SEDIA TRADITRICE</h2>
+    <div class="art" aria-label="Spazio illustrazione Sedia traditrice"><span>CIN CIN!</span><strong>36</strong></div>
+    <p class="description">La sedia emette un rumore che sembra una dichiarazione di guerra internazionale. Tutto il locale si gira mentre tu cerchi di spiegare con gli occhi che non è stato il tuo culo.</p>
+    <ul class="consequences"><li><strong>Cambia posto:</strong> scambia posizione sul tabellone con il giocatore dietro di te.</li><li><strong>Rimani impassibile:</strong> <code>D +1</code>; al prossimo dado sottrai 1 al totale.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>lascia che il gruppo scelga quale tuo rumore corporeo ti rappresenta meglio</span></div><div class="escape-option"><b>FAI</b><span>riproduci il suono e attribuiscilo alla sedia</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="37">
+    <header><span>CAOS DA OSTERIA</span><b>#37</b></header>
+    <h2>BAGNO OCCUPATO DA UN'ETERNITÀ</h2>
+    <div class="art" aria-label="Spazio illustrazione Bagno occupato da un'eternità"><span>CIN CIN!</span><strong>37</strong></div>
+    <p class="description">Il bagno è occupato da un tempo incompatibile con la sopravvivenza umana. Da dietro la porta arrivano suoni che suggeriscono una tragedia greca scritta direttamente dall'intestino.</p>
+    <ul class="consequences"><li><strong>Aspetta:</strong> <code>E -1</code>, <code>U -1</code>.</li><li><strong>Cerca altrove:</strong> arretra di 1, <code>S +1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>rispondi a una domanda secca del gruppo sul tuo peggior bagno pubblico senza poter dire “passo”</span></div><div class="escape-option"><b>FAI</b><span>recita un monologo tragico dalla porta</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="38">
+    <header><span>CAOS DA OSTERIA</span><b>#38</b></header>
+    <h2>IL BRINDISI INFINITO</h2>
+    <div class="art" aria-label="Spazio illustrazione Il brindisi infinito"><span>CIN CIN!</span><strong>38</strong></div>
+    <p class="description">Qualcuno inizia un brindisi che contiene infanzia, università, geopolitica e un cane morto. Dopo sette minuti tiene ancora il bicchiere alzato e nessuno sente più il braccio.</p>
+    <ul class="consequences"><li><strong>Ascolta fino alla fine:</strong> <code>E -2</code>, <code>D +2</code>.</li><li><strong>Interrompi:</strong> <code>D -1</code>, tira subito di nuovo.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>indica chi al tavolo farebbe il brindisi più palloso e concedigli diritto di replica</span></div><div class="escape-option"><b>FAI</b><span>improvvisa un brindisi di dieci secondi a una ciabatta</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="39">
+    <header><span>CAOS DA OSTERIA</span><b>#39</b></header>
+    <h2>IL SOTTOBICCHIERE PROFETICO</h2>
+    <div class="art" aria-label="Spazio illustrazione Il sottobicchiere profetico"><span>CIN CIN!</span><strong>39</strong></div>
+    <p class="description">Sul retro del sottobicchiere c'è scritto: “Non fidarti di quello col telefono”. Avete tutti un telefono e improvvisamente vi guardate come concorrenti di un reality girato male.</p>
+    <ul class="consequences"><li><strong>Accusa:</strong> scegli un giocatore; entrambi <code>S +1</code>, tu avanzi di 1.</li><li><strong>Conservalo:</strong> annulla una futura carta sociale contro di te.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>consegna una tua carta segreta a chi reputi meno affidabile e lascialo guardare per cinque secondi</span></div><div class="escape-option"><b>FAI</b><span>leggi una profezia inventata nel palmo di un avversario</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Eventi da osteria" data-card="40">
+    <header><span>CAOS DA OSTERIA</span><b>#40</b></header>
+    <h2>SERATA QUIZ IMPROVVISATA</h2>
+    <div class="art" aria-label="Spazio illustrazione Serata quiz improvvisata"><span>CIN CIN!</span><strong>40</strong></div>
+    <p class="description">Parte un quiz improvvisato e la domanda decisiva riguarda una cosa totalmente inutile. Incredibilmente conosci la risposta: anni di procrastinazione online stanno finalmente pagando.</p>
+    <ul class="consequences"><li><strong>Rispondi:</strong> domanda casuale; successo <code>€ +4</code>, fallimento <code>D -1</code>.</li><li><strong>Sabota una squadra:</strong> <code>S +2</code>, ruba <code>€2</code> al leader.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>lascia che il gruppo ti faccia una domanda su qualsiasi materia e rispondi senza usare il telefono</span></div><div class="escape-option"><b>FAI</b><span>conduci un quiz con una domanda inventata</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="41">
+    <header><span>COLPO DI FORTUNA</span><b>#41</b></header>
+    <h2>MONETA SOTTO IL TAVOLO</h2>
+    <div class="art" aria-label="Spazio illustrazione Moneta sotto il tavolo"><span>CHE CULO!</span><strong>41</strong></div>
+    <p class="description">Trovi del denaro sotto il tavolo e per un attimo ricominci a credere nell'economia. Lo raccogli con la velocità di chi teme che possa accorgersene persino il pavimento.</p>
+    <ul class="consequences"><li><strong>Tieni tutto:</strong> <code>€ +3</code>, <code>S +1</code>.</li><li><strong>Offri una parte:</strong> <code>€ +1</code>, <code>D +2</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>assegna pubblicamente un prezzo in euro alla tua amicizia con ciascun giocatore</span></div><div class="escape-option"><b>FAI</b><span>fai un discorso elettorale per ottenere la moneta</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="42">
+    <header><span>COLPO DI FORTUNA</span><b>#42</b></header>
+    <h2>VECCHIO AMICO GENEROSO</h2>
+    <div class="art" aria-label="Spazio illustrazione Vecchio amico generoso"><span>CHE CULO!</span><strong>42</strong></div>
+    <p class="description">Un vecchio amico che non vedevi da anni decide che stasera sei sotto la sua protezione. Non ricordi bene chi sia, ma ha cibo, acqua e l'autorevolezza di una mamma veneta.</p>
+    <ul class="consequences"><li><strong>Accetta un analcolico:</strong> <code>U -2</code>, <code>E +1</code>.</li><li><strong>Accetta da mangiare:</strong> <code>ST +2</code>, <code>€ +1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra chi occupa davvero il primo posto tra i contatti preferiti o recenti</span></div><div class="escape-option"><b>FAI</b><span>ringrazia il benefattore con un inchino esagerato</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="43">
+    <header><span>COLPO DI FORTUNA</span><b>#43</b></header>
+    <h2>PLAYLIST PERFETTA</h2>
+    <div class="art" aria-label="Spazio illustrazione Playlist perfetta"><span>CHE CULO!</span><strong>43</strong></div>
+    <p class="description">Parte la canzone perfetta, quella che trasforma anche i peggiori disastri umani in protagonisti. Per tre minuti il locale diventa un videoclip e persino il tizio che vomita fuori sembra una comparsa pagata.</p>
+    <ul class="consequences"><li><strong>Balla:</strong> prova ritmo; successo <code>E +2</code>, fallimento <code>D -1</code>.</li><li><strong>Goditela:</strong> <code>E +1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>riproduci dieci secondi del brano più imbarazzante tra i tuoi preferiti</span></div><div class="escape-option"><b>FAI</b><span>balla per dieci secondi senza musica</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="44">
+    <header><span>COLPO DI FORTUNA</span><b>#44</b></header>
+    <h2>RESTITUZIONE INSPERATA</h2>
+    <div class="art" aria-label="Spazio illustrazione Restituzione insperata"><span>CHE CULO!</span><strong>44</strong></div>
+    <p class="description">Il coinquilino ti restituisce finalmente quei soldi senza che tu debba minacciare nessuno. Nessuno sa cosa gli sia successo e, sinceramente, avete paura di chiederglielo.</p>
+    <ul class="consequences"><li><strong>Incassa:</strong> <code>€ +5</code>.</li><li><strong>Fai il signore:</strong> <code>€ +2</code>, <code>D +2</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra nel telefono una richiesta di pagamento ancora aperta, oscurando i dati sensibili</span></div><div class="escape-option"><b>FAI</b><span>interpreta un esattore sorprendentemente gentile</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="45">
+    <header><span>COLPO DI FORTUNA</span><b>#45</b></header>
+    <h2>PASSAGGIO FORTUNATO</h2>
+    <div class="art" aria-label="Spazio illustrazione Passaggio fortunato"><span>CHE CULO!</span><strong>45</strong></div>
+    <p class="description">Un amico sobrio, affidabile e miracolosamente automunito passa nella direzione giusta. È talmente responsabile che per qualche secondo dubitate sia davvero vostro amico.</p>
+    <ul class="consequences"><li><strong>Accetta:</strong> avanza di 3, <code>S -1</code>.</li><li><strong>Cedi il posto:</strong> scegli un giocatore che avanza di 3; tu <code>D +2</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>consegna simbolicamente le chiavi al giocatore meno affidabile e spiegagli in tre parole perché è una pessima idea</span></div><div class="escape-option"><b>FAI</b><span>imita un navigatore troppo premuroso</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="46">
+    <header><span>COLPO DI FORTUNA</span><b>#46</b></header>
+    <h2>PATATINE MIRACOLOSE</h2>
+    <div class="art" aria-label="Spazio illustrazione Patatine miracolose"><span>CHE CULO!</span><strong>46</strong></div>
+    <p class="description">Sul tavolo appare una ciotola di patatine ancora intatta. È un evento statisticamente impossibile: qualcuno sussurra “non toccarla, potrebbe essere una trappola”.</p>
+    <ul class="consequences"><li><strong>Divora:</strong> <code>ST +2</code>, <code>U -1</code>.</li><li><strong>Condividi:</strong> tu e un giocatore ottenete <code>ST +1</code> e <code>D +1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>lascia che il gruppo scelga quale schifezza nel locale mangeresti per un euro</span></div><div class="escape-option"><b>FAI</b><span>pubblicizza la patatina come un prodotto di lusso</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="47">
+    <header><span>COLPO DI FORTUNA</span><b>#47</b></header>
+    <h2>BARISTA IMMAGINARIO LEGGENDARIO</h2>
+    <div class="art" aria-label="Spazio illustrazione Barista immaginario leggendario"><span>CHE CULO!</span><strong>47</strong></div>
+    <p class="description">Il barista immaginario leggendario osserva la tua faccia da sopravvissuto e annuisce con rispetto. Ha visto guerre, addii al celibato e studenti di ingegneria: sa riconoscere chi è davvero nella merda.</p>
+    <ul class="consequences"><li><strong>Chiedi acqua:</strong> <code>U -2</code>, <code>D +1</code>.</li><li><strong>Chiedi informazioni:</strong> guarda le prime tre carte Imprevisto e rimettile nell'ordine che preferisci.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra l'ultima ordinazione da asporto e sottoponila al giudizio del gruppo</span></div><div class="escape-option"><b>FAI</b><span>interpreta il barista che giudica in silenzio il gruppo</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="48">
+    <header><span>COLPO DI FORTUNA</span><b>#48</b></header>
+    <h2>MEMORIA IMPROVVISA</h2>
+    <div class="art" aria-label="Spazio illustrazione Memoria improvvisa"><span>CHE CULO!</span><strong>48</strong></div>
+    <p class="description">Un lampo di lucidità attraversa finalmente la nebbia nel tuo cervello. Ricordi esattamente dove avevi messo ciò che cercavi: nel posto intelligente che avevi scelto e subito dimenticato.</p>
+    <ul class="consequences"><li><strong>Recupera denaro:</strong> <code>€ +3</code>.</li><li><strong>Recupera reputazione:</strong> annulla l'ultima perdita di dignità subita.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>mostra l'ultimo promemoria o allarme dal titolo imbarazzante che hai sul telefono</span></div><div class="escape-option"><b>FAI</b><span>recita il momento della rivelazione come in una soap opera</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="49">
+    <header><span>COLPO DI FORTUNA</span><b>#49</b></header>
+    <h2>COMPLIMENTO INATTESO</h2>
+    <div class="art" aria-label="Spazio illustrazione Complimento inatteso"><span>CHE CULO!</span><strong>49</strong></div>
+    <p class="description">Uno sconosciuto ti guarda e dice che hai una gran bella energia. Evidentemente vede cose che voi non vedete, oppure sta cercando di venderti dei cristalli.</p>
+    <ul class="consequences"><li><strong>Ringrazia:</strong> <code>D +2</code>.</li><li><strong>Passa il complimento:</strong> scegli un avversario; entrambi <code>D +1</code>, tu <code>S -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>scegli chi al tavolo trovi più attraente e fagli un complimento specifico senza ridere</span></div><div class="escape-option"><b>FAI</b><span>vendi l'aura di qualcuno come fosse un prodotto</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article>
+<article class="event-card" data-family="Colpi di fortuna e caos positivo" data-card="50">
+    <header><span>COLPO DI FORTUNA</span><b>#50</b></header>
+    <h2>SECONDA POSSIBILITÀ</h2>
+    <div class="art" aria-label="Spazio illustrazione Seconda possibilità"><span>CHE CULO!</span><strong>50</strong></div>
+    <p class="description">Per una combinazione cosmica di culo, nessuno ha notato il tuo ultimo disastro. L'universo ti concede una seconda possibilità, probabilmente perché vuole vederti fallire in modo ancora più spettacolare.</p>
+    <ul class="consequences"><li><strong>Ritira:</strong> ripeti l'ultimo dado e scegli quale risultato tenere.</li><li><strong>Cancella le prove:</strong> recupera <code>D +2</code> e riduci <code>S -1</code>.</li></ul>
+    <section class="escape"><h3>SALVA IL CULO</h3><div><div class="escape-option"><b>SCOMODA</b><span>lascia che il gruppo voti il tuo peggior errore della serata e accetta il verdetto senza difenderti</span></div><div class="escape-option"><b>FAI</b><span>ricrea il disastro dandogli un finale eroico</span></div><div class="escape-option"><b>BEVI</b><span>bevi un sorso.</span></div></div></section>
+    <output class="fit-badge" aria-live="polite">OK</output>
+  </article></main>
+<script>
+const cards=[...document.querySelectorAll('.event-card')];
+const summary=document.querySelector('#summary');
+function audit(){let long=0;for(const card of cards){card.classList.remove('is-overflowing');const overflowing=card.scrollHeight>card.clientHeight;if(overflowing){card.classList.add('is-overflowing');long++}card.querySelector('.fit-badge').textContent=overflowing?'ATTENZIONE':'OK'}summary.textContent=cards.filter(c=>c.style.display!=='none').length+' carte · '+long+' testi lunghi'}
+document.querySelector('#family').addEventListener('change',event=>{for(const card of cards)card.style.display=!event.target.value||card.dataset.family===event.target.value?'':'none';audit()});
+document.querySelector('#size').addEventListener('click',()=>{document.body.classList.toggle('compact');requestAnimationFrame(audit)});
+document.querySelector('#surface').addEventListener('click',event=>{const controller=document.body.dataset.view==='tv';document.body.dataset.view=controller?'controller':'tv';event.target.textContent=controller?'Vista TV':'Vista controller';requestAnimationFrame(audit)});
+document.querySelector('#overflow').addEventListener('click',()=>{document.body.classList.toggle('show-overflow')});
+new ResizeObserver(audit).observe(document.querySelector('.deck'));audit();
+</script>
+</body></html>
