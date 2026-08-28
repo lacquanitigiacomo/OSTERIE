@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@500;700&display=swap');
+
+:root { font-family: Oswald, Impact, sans-serif; color: #27170e; background: #160c08; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+button:focus-visible, input:focus-visible { outline: 4px solid #f0a90b; outline-offset: 3px; }
+.controller-shell { position: relative; isolation: isolate; min-height: 100vh; max-width: 520px; margin: 0 auto; overflow: hidden; padding: 24px 20px 32px; background: #e7c991; border-inline: 6px solid #32150e; box-shadow: 0 0 60px #000; }
+.paper-grain { position: absolute; z-index: -1; inset: -12px; background: linear-gradient(#e8cf9cdd, #e1be7edd), url('/tv-phone-hybrid-osteria-comic-v2.png') 82% center / auto 100% no-repeat; opacity: .42; transform: scale(1.04); pointer-events: none; }
+.player-banner { margin: 0 auto 12px; width: min(80%, 330px); padding: 7px 16px; color: #f5d99a; background: #641d13; text-align: center; text-transform: uppercase; font: 28px 'Alfa Slab One', serif; letter-spacing: .06em; transform: rotate(-1deg); }
+.roll-panel { display: grid; justify-items: center; text-align: center; }
+.roll-panel h1 { max-width: 9ch; margin: 2px 0 6px; color: #173a1d; font: 44px/1.04 'Alfa Slab One', serif; text-transform: uppercase; text-shadow: 1px 2px #f2dfb1; }
+.roll-hint { min-height: 24px; margin: 0 0 10px; font-size: 17px; }
+.motion-art { position: relative; width: 180px; height: 145px; color: #671b11; }
+.dice-cup { display: block; font-size: 102px; line-height: 1.2; transform: rotate(8deg); text-shadow: 4px 5px #3d160d; }
+.tiny-dice { position: absolute; right: 22px; bottom: 2px; display: flex; gap: 4px; padding: 3px 7px; color: #25170e; background: #eee0bc; border: 3px solid currentColor; font-size: 22px; transform: rotate(-8deg); }
+.tiny-dice--rolling span:first-child { animation: phone-die-left .45s cubic-bezier(.3,.7,.4,1) infinite; }
+.tiny-dice--rolling span:last-child { animation: phone-die-right .38s cubic-bezier(.3,.7,.4,1) infinite reverse; }
+.dice-status { min-height: 24px; margin: 8px 0 0; color: #6b2417; font-weight: 800; }
+@keyframes phone-die-left { 50% { transform: translate(-7px, -12px) rotate(170deg) scale(1.12); } 100% { transform: rotate(360deg); } }
+@keyframes phone-die-right { 50% { transform: translate(8px, -9px) rotate(-190deg) scale(.92); } 100% { transform: rotate(-360deg); } }
+@media (prefers-reduced-motion: reduce) { .tiny-dice--rolling span { animation-duration: 1ms !important; animation-iteration-count: 1 !important; } }
+.motion-lines { position: absolute; left: 5px; top: 38px; font-size: 35px; transform: rotate(180deg); }
+.motion-button { border: 0; background: transparent; color: #641d13; padding: 8px 12px; text-decoration: underline; font-size: 18px; cursor: pointer; }
+.permission-note { margin: 4px 0; color: #641d13; }
+.roll-button, .join-form button, .start-button { width: min(100%, 350px); min-height: 64px; margin: 8px 0 18px; border: 4px solid #35150d; border-radius: 4px; background: #e3a817; color: #213b1f; box-shadow: 4px 5px 0 #6b2417; font: 28px 'Alfa Slab One', serif; text-transform: uppercase; cursor: pointer; }
+.roll-button:active:not(:disabled), .join-form button:active { transform: translate(3px, 3px); box-shadow: 1px 2px 0 #6b2417; }
+.roll-button:disabled { opacity: .52; cursor: not-allowed; }
+.private-stats { border: 3px solid #542116; background: #efd9a7e8; box-shadow: inset 0 0 16px #90663666; }
+.private-stats dl { margin: 0; }
+.private-stats dl div { display: flex; align-items: center; justify-content: space-between; min-height: 54px; padding: 8px 18px; border-bottom: 2px solid #8e603a; }
+.private-stats dl div:last-child { border: 0; }
+.private-stats dt { color: #2a4925; font-size: 20px; text-transform: uppercase; }
+.private-stats dd { margin: 0; color: #6b2117; font: 25px 'Alfa Slab One', serif; }
+.join-form { display: grid; gap: 18px; padding-top: 15vh; }
+.join-form h1 { margin: 0; color: #641d13; font: 42px 'Alfa Slab One', serif; text-align: center; text-transform: uppercase; }
+.join-form label { display: grid; gap: 6px; color: #234020; font-size: 19px; text-transform: uppercase; }
+.join-form input { min-height: 54px; border: 3px solid #542116; background: #f5e4bb; padding: 8px 12px; color: #2d160d; font-size: 22px; }
+.join-form button { justify-self: center; font-size: 22px; }
+.connection-status { width: fit-content; margin: 0 auto 14px; padding: 5px 12px; border: 2px solid #542116; background: #f0dba9; text-transform: uppercase; letter-spacing: .04em; }
+.connection-status--connected { color: #214423; border-color: #214423; }
+.connection-error { margin: 0 0 14px; padding: 10px 12px; color: #fff4d6; background: #8b2017; border: 3px solid #42120d; text-align: center; }
+.waiting-panel, .lobby-panel { min-height: 390px; display: grid; place-content: center; justify-items: center; text-align: center; }
+.waiting-panel h1, .lobby-panel h1 { margin: 0 0 8px; color: #173a1d; font: 38px/1.05 'Alfa Slab One', serif; text-transform: uppercase; }
+.lobby-panel p { font-size: 20px; }
+.start-button { margin-top: 30px; }
+.start-button:disabled { opacity: .52; cursor: not-allowed; }
+.event-card { display: grid; gap: 12px; margin: 16px 0; padding: 20px; border: 4px solid #35150d; background: #f0d59a; box-shadow: 6px 7px 0 #6b2417; transform: rotate(-.4deg); }
+.event-card h1, .event-card p { margin: 0; }
+.event-card h1 { color: #641d13; font: 30px 'Alfa Slab One', serif; text-transform: uppercase; }
+.event-kicker { color: #c44a20; font: 22px 'Alfa Slab One', serif; text-transform: uppercase; }
+.event-card button { min-height: 52px; border: 3px solid #35150d; background: #e3a817; color: #213b1f; font-weight: 700; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }

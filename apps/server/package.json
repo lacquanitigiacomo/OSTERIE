@@ -1,0 +1,19 @@
+{
+  "name": "@osterie/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite-node --watch src/index.ts",
+    "start": "vite-node src/index.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "ws": "^8.21.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "vite-node": "^6.0.0"
+  }
+}
